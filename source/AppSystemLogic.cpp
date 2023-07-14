@@ -20,12 +20,6 @@ using namespace Unigine;
 // System logic, it exists during the application life cycle.
 // These methods are called right after corresponding system script's (UnigineScript) methods.
 
-bool binds::compare(float l, float r)
-{
-	return Math::compare(l, r);
-}
-
-
 NumberUi create_number_ui(const char *name, const WidgetGridBoxPtr &grid)
 {
 	NumberUi ui;
@@ -97,15 +91,28 @@ int AppSystemLogic::init()
 		EngineWindowGroup::GROUP_TYPE_HORIZONTAL);
 
 
-	// init bindings
+//	// init bindings
+//	{
+//		auto binding = binder_.create<float>(&DecalOrtho::getWidth, &DecalOrtho::setWidth);
+//		binding->attach(width_ui_.edit_line);
+//		binding->attach(width_ui_.slider);
+//	}
+
+//	{
+//		auto binding = binder_.create<float>(&DecalOrtho::getHeight, &DecalOrtho::setHeight);
+//		binding->attach(height_ui_.edit_line);
+//		binding->attach(height_ui_.slider);
+//	}
+
+	// init bonus bindings
 	{
-		auto binding = binder_.create<float>(&DecalOrtho::getWidth, &DecalOrtho::setWidth);
+		auto binding = binder_.create<&DecalOrtho::getWidth, &DecalOrtho::setWidth>();
 		binding->attach(width_ui_.edit_line);
 		binding->attach(width_ui_.slider);
 	}
 
 	{
-		auto binding = binder_.create<float>(&DecalOrtho::getHeight, &DecalOrtho::setHeight);
+		auto binding = binder_.create<&DecalOrtho::getHeight, &DecalOrtho::setHeight>();
 		binding->attach(height_ui_.edit_line);
 		binding->attach(height_ui_.slider);
 	}

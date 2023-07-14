@@ -38,6 +38,13 @@ add_executable(${target}
 		${CMAKE_CURRENT_LIST_DIR}/AppWorldLogic.cpp
 		${CMAKE_CURRENT_LIST_DIR}/AppWorldLogic.h
 		${CMAKE_CURRENT_LIST_DIR}/main.cpp
+		${CMAKE_CURRENT_LIST_DIR}/Bindings.h
+		${CMAKE_CURRENT_LIST_DIR}/BonusBindings.h
+		${CMAKE_CURRENT_LIST_DIR}/UndoStack.cpp
+		${CMAKE_CURRENT_LIST_DIR}/UndoStack.h
+		${CMAKE_CURRENT_LIST_DIR}/Common.cpp
+		${CMAKE_CURRENT_LIST_DIR}/Common.h
+		${CMAKE_CURRENT_LIST_DIR}/FunctionTraits.h
 	)
 
 target_include_directories(${target}
