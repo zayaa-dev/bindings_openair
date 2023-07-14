@@ -20,10 +20,6 @@ using namespace Unigine;
 // System logic, it exists during the application life cycle.
 // These methods are called right after corresponding system script's (UnigineScript) methods.
 
-// Todo attach
-// Todo update
-// Todo detach
-
 bool binds::compare(float l, float r)
 {
 	return Math::compare(l, r);
